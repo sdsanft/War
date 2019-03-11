@@ -112,4 +112,60 @@ public class Deck {
 			
 		return s2;
 	}
+	
+	public String compare(String c1, String c2) {
+		String r1 = c1.substring(1);
+		String r2 = c2.substring(1);
+		
+		int s1, s2;
+		s1 = 0;
+		s2 = 0;
+		
+		try {
+			s1 = Integer.parseInt(r1);
+			s2 = Integer.parseInt(r2);
+		} catch (NumberFormatException e) {
+			switch (r1) {
+			case "J":
+				s1 = 11;
+				break;
+			case "Q":
+				s1 = 12;
+				break;
+			case "K":
+				s1 = 13;
+				break;
+			case "A":
+				s1 = 14;
+				break;
+			//default:
+				//return("Invalid Card");
+			}
+			
+			switch (r2) {
+			case "J":
+				s2 = 11;
+				break;
+			case "Q":
+				s2 = 12;
+				break;
+			case "K":
+				s2 = 13;
+				break;
+			case "A":
+				s2 = 14;
+				break;
+			//default:
+				//return("Invalid Card");
+			}
+		}
+	
+		if (s1 > s2) {
+			return ("c1");
+		} else if (s2 > s1) {
+			return ("c2");
+		} else {
+			return ("tie");
+		}
+	}
 }
